@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <header className='bg bg-slate-200 shadow-md'>
+    <header className='bg bg-teal-500 shadow-md'>
         <div className='flex justify-between items-center max-w-16xl mx-auto p-3'>
 
             <Link to="/">
-            <h1 className='font-extrabold text-sm sm:text-xl flex flex-wrap'>
+            <h1 className='font-extrabold text-l sm:text-xl flex flex-wrap'>
                 <span className='text-slate-500 '>Real</span>
                 <span className='text-slate-600'>Estate</span>
             </h1>
