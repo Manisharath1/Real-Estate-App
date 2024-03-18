@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {signInStart, signInSuccess, signInFailure} from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 
 export default function Login() {
@@ -25,7 +26,7 @@ export default function Login() {
     try 
     {
       dispatch(signInStart());
-    const res =await fetch('/service/auth/login', 
+    const res =await fetch('/service/auth/login',
     {
       method: 'POST',
       headers: {
@@ -64,6 +65,7 @@ export default function Login() {
         <button disabled={loading} className='bg-rose-900 p-2 my-4 text-center text-white uppercase rounded-xl hover:opacity-90 disabled:opacity-80'>
         {loading ? 'Loading..' : 'LOGIN'}
       </button>
+      <OAuth/>
 
       </form> 
       <div className='flex gap-2 my-5'>
