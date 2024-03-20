@@ -1,7 +1,12 @@
 import {FaSearch} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+
 
 export default function Navbar() {
+    
+    const {currentUser} = useSelector(state => state.user)
+
   return (
     <header className='bg bg-teal-500 shadow-md'>
         <div className='flex justify-between items-center max-w-16xl mx-auto p-3'>
@@ -34,10 +39,15 @@ export default function Navbar() {
                 hover:text-lime-600  hover:font-bold'>Contact</li>
             </Link>
 
-            <Link to="/login">
+            <Link to="/profile">
+
+                {currentUser ? (
+                    <img className ='rounded-full h-7 w-7 object-cover' src = {currentUser.picture} alt='profile' />
+                ) : (
                 <li className='font-semibold sm:inline text-indigo-500 hover:italic 
                 hover:text-lime-600 hover:font-bold'>Login</li>
-            </Link>  
+                )}
+            </Link>
             </ul>
         </div>
 
